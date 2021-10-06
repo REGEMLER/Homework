@@ -14,7 +14,7 @@
 // }
 // }
 // Задание 3
-let countNum = +prompt("How much numbers?");
+let countNum = +prompt("How many numbers do you want to input?");
 let counerPositive = 0;
 let counterNegative = 0;
 let counterNull = 0;
