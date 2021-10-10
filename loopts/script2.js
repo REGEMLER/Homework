@@ -62,27 +62,49 @@
 // }
 
 // // Задание 3
-// let i = 0;
-// let lastNumber = 0;
-// let nextNumber = 1;
-// while(i<5){
-// if(lastNumber>nextNumber){
-// alert("ERROR");
-// break;
-// }
-// lastNumber = +prompt(`Number?`);
-// i++;
-// if(i>=5){
-// break;
-// }
-// nextNumber = +prompt(`Number?`);
-// i++;
+let i = 0;
+let lastNumber = 0;
+let nextNumber = 1;
+while(i<5){
+if(lastNumber>nextNumber){
+alert("ERROR");
+break;
+}
+lastNumber = +prompt(`Number?`);
+i++;
+if(i>=5){
+break;
+}
+nextNumber = +prompt(`Number?`);
+i++;
+}
+
+// Решение от препода
+// let currentNum;
+// let previousNum;
+
+// for (let i = 0; i < 5; i++) {
+//     if (previousNum === undefined) {
+//         previousNum = +prompt('enter a num');
+//         continue;
+//     }
+
+//     currentNum = +prompt('enter a num bigger than previous');
+
+//     if (currentNum > previousNum) {
+//         previousNum = currentNum;
+//     } else {
+//         alert('ERROR');
+//         break;
+//     }
 // }
 
 // // Задание 4
-let number = +prompt(`how many za?`);
-let sum = "";
-for(let i =0;i<number;i++){
-sum = 'za' + sum;
-}
-alert(`${sum}ika`);
+// let number = +prompt(`how many za?`);
+// let sum = "";
+// for(let i =0;i<number;i++){
+// sum = 'za' + sum;
+// }
+// alert(`${sum}ika`);
+
+
