@@ -52,17 +52,4 @@
 // alert(sum);
 
 // Задание 4
-let arr = [1, 2, 3, 4, 5, 4, 1, 2,3, 4, 2, 3];
 
-function BubbleSort(arr)       // A - массив, который нужно
-{                            // отсортировать по возрастанию.
-    var n = arr.length;
-    for (var i = 0; i < n-1; i++)
-     { for (var j = 0; j < n-1-i; j++)
-        { if (arr[j+1] < arr[j])
-           { var t = arr[j+1]; arr[j+1] = arr[j]; arr[j] = t; }
-        }
-     }                     
-    return arr;    
-}
-console.log(arr);
