@@ -1,5 +1,5 @@
 function russian(name){
-    console.log(`Привет ${name}`)
+    return `Привет ${name}`
 }
 
 function english(name){
@@ -11,6 +11,6 @@ function italian(name){
 }
 
 function sayHello(name,translate){
-    
+    translate(name);
 }
 
