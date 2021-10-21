@@ -24,26 +24,26 @@
 // функцию sumTo возвращать результат в виде числа, строки или
 // логического типа данных.
 
-// function string(n){
-// 	n = String(n);
-// 	console.log(n)
-// 	console.log(typeof(n))
-// }
-// function numb(n){
-// 	n = Number(n);
-// 	console.log(n)
-// 	console.log(typeof(n))
-// }
-// function bool(n){
-// 	n = Boolean(n);
-// 	console.log(n)
-// 	console.log(typeof(n))
-// }
-// function sumTo(a,b,convert){
-// 	let summ = a+b;
-// 	return convert(summ);
-// }
-// sumTo(5,7,bool)
+function string(n){
+	n = String(n);
+	console.log(n)
+	console.log(typeof(n))
+}
+function numb(n){
+	n = Number(n);
+	console.log(n)
+	console.log(typeof(n))
+}
+function bool(n){
+	n = Boolean(n);
+	console.log(n)
+	console.log(typeof(n))
+}
+function sumTo(a,b,convert){
+	let summ = a+b;
+	return convert(summ);
+}
+sumTo(5,7,bool)
 
 // 3. Создать функцию checkLogin, которая принимает 4 параметра. 1
 // параметр - это логин, введенный пользователем, 2 –

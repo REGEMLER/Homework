@@ -34,12 +34,12 @@ let counerPositive = 0;
 let counterNegative = 0;
 let counterNull = 0;
 while(countNum--){
-let num = +prompt("press number");
-if(num>0){
-    ++counerPositive;
-} else if (num<0){
-    ++counterNegative;
-} else {++counterNull} 
+    let num = +prompt("press number");
+    if(num>0){
+        ++counerPositive;
+    } else if (num<0){
+        ++counterNegative;
+    } else {++counterNull} 
 }
 console.log(`Positive numbers: ${counerPositive}`);
 console.log(`Тegative numbers: ${counterNegative}`);
