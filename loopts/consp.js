@@ -43,7 +43,7 @@ for(i = 1;;i++){
 }
 alert(`the end`);
 
-// вариант препода 
+// правильное решение 
 // let hamsters = 100;
 // let userHamsters;
 
