@@ -1,22 +1,22 @@
 // 1. Создать функцию, которая принимает массив и callback. Функция
 // должна каждый элемент массива обрабатывать callback’ом.
 
-function helloElement(i){
-	return i = `hello ${i}`
-}
-function elementPlus(i){
-	return ++i;
-}
-function callArr(arr, callBack){
-	let result = [];
-	for(let i=0;i<arr.length;i++){	 
-		result.push(callBack(arr[i]))
-	}
-	console.log(result);
-	return result;
-}
-let arr1 = [1, 3, 45, 34, 22];
-callArr(arr1,helloElement);
+// function helloElement(i){
+// 	return i = `hello ${i}`
+// }
+// function elementPlus(i){
+// 	return ++i;
+// }
+// function callArr(arr, callBack){
+// 	let result = [];
+// 	for(let i=0;i<arr.length;i++){	 
+// 		result.push(callBack(arr[i]))
+// 	}
+// 	console.log(result);
+// 	return result;
+// }
+// let arr1 = [1, 3, 45, 34, 22];
+// callArr(arr1,helloElement);
 
 // 2. Создать функцию sumTo, которая принимает два числа и callback.
 // Задача функции складывать 2 числа, а задача callback’a заставлять
@@ -49,22 +49,23 @@ callArr(arr1,helloElement);
 // правильный логин, 3 – callback, который вызовется если логин
 // верный, 4 – callback, который вызовется если логин ложный.
 
-// function checkLogin(userLogin,trueLogin,trueCall,falseCall){
-// 	function trueCall(){
-// 		alert("Welcome!");
-// 	}
-// 	function falseCall(){
-// 		alert("Go away");
-// 	}
-// 	if(userLogin===trueLogin){
-// 		trueCall();
-// 	} else{
-// 		falseCall();
-// 	}
-// }
-// let userName = prompt("What is your login?");
-// let name = "Troll";
-// checkLogin(userName, name);
+function trueCall(){
+	return "Welcome!";
+}
+function falseCall(){
+	return "Go away!";
+}
+
+function checkLogin(userLogin,trueLogin,call1,call2){
+	if(userLogin===trueLogin){
+		alert(call1());
+	} else{
+		alert(call2());
+	}
+}
+let userName = prompt("What is your login?");
+let login = "Troll";
+checkLogin(userName, login,trueCall,falseCall);
 
 // 4. Написать программу, которая вычисляет сумму чисел от 1 до n. Значение n вводится с клавиатуры.
 // Проверить число n на корректность (чтобы это было число, чтобы оно не было меньше 1, чтобы это было не null).
