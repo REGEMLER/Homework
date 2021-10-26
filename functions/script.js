@@ -49,27 +49,26 @@
 // правильный логин, 3 – callback, который вызовется если логин
 // верный, 4 – callback, который вызовется если логин ложный.
 
-function trueCall(){
-	return "Welcome!";
-}
-function falseCall(){
-	return "Go away!";
-}
+// function trueCall(){
+// 	return "Welcome!";
+// }
+// function falseCall(){
+// 	return "Go away!";
+// }
 
-function checkLogin(userLogin,trueLogin,call1,call2){
-	if(userLogin===trueLogin){
-		alert(call1());
-	} else{
-		alert(call2());
-	}
-}
-let userName = prompt("What is your login?");
-let login = "Troll";
-checkLogin(userName, login,trueCall,falseCall);
+// function checkLogin(userLogin,trueLogin,call1,call2){
+// 	if(userLogin===trueLogin){
+// 		alert(call1());
+// 	} else{
+// 		alert(call2());
+// 	}
+// }
+// let userName = prompt("What is your login?");
+// let login = "Troll";
+// checkLogin(userName, login,trueCall,falseCall);
 
 // 4. Написать программу, которая вычисляет сумму чисел от 1 до n. Значение n вводится с клавиатуры.
 // Проверить число n на корректность (чтобы это было число, чтобы оно не было меньше 1, чтобы это было не null).
-
 // function checkNumber(num){
 // 	if(typeof(num)!=="number"){
 // 		return alert("This is not a number");
@@ -82,20 +81,20 @@ checkLogin(userName, login,trueCall,falseCall);
 // }
 // function checkNull(num){
 // 	if(num===null){
-// 		return alert("The end");
+// 		return alert("You refused to enter a number");
 // 	}
 // }
-// function sumTo(max){
-//     checkNumber(max);
-// 	checkLessThanOne(max);
-// 	checkNull(max);
+// function sumTo(number){
+//     checkNumber(number);
+// 	checkLessThanOne(number);
+// 	checkNull(number);
 // 	let sum = 0;
-// 	for(let i = 0;i<=max;i++){
+// 	for(let i = 0;i<=number;i++){
 // 		sum +=i;
 // 	}
 // 	return sum;
 // } 
-// alert(sumTo(656));
+// alert(sumTo(12));
 
 // 5. Написать программу, которая определяет количество
 // положительных, отрицательных чисел и нулей. В
@@ -142,26 +141,6 @@ checkLogin(userName, login,trueCall,falseCall);
 // клавиатуры 10 пар чисел, сравнивает эти числа и
 // выводит большие из них. (Используйте массив)
 
-// Задание 6 Вариант 1
-// let biggests = [];
-// function toPush(a,b,arr){
-// 	if(a>b){
-// 		arr.push(a)
-// 	} else{
-// 		arr.push(a)
-// 	}
-// }
-// function compare(){
-// 	for(i=0;i<4;i++){
-// 		let num1 = +prompt("Press 1 number");
-// 		let num2 = +prompt("Press 2 number");
-// 		toPush(num1,num2,biggests);
-// 	}
-// 	return biggests;
-// }
-// console.log(compare());
-
-// Задание 6 Вариант 2
 // let numbers = [];
 // function selectBig(a,b,arr){
 // 	if(a>b){
@@ -185,7 +164,7 @@ checkLogin(userName, login,trueCall,falseCall);
 // 	}
 // }
 // function compare(){
-// 	toInput(3,selectSmall)
+// 	toInput(10,selectSmall)
 // 	return numbers;
 // }
 // console.log(compare());
