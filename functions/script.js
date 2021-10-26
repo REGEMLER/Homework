@@ -1,49 +1,48 @@
 // 1. Создать функцию, которая принимает массив и callback. Функция
 // должна каждый элемент массива обрабатывать callback’ом.
 
-// function helloArr(arr){
-// 	for(let i = 0; i<arr.length; i++){
-// 		arr.splice(i,1,`hello ${arr[i]}`)
-// 		console.log(arr[i]);
-// 	}
-// }
-// function arrPlus(arr){
-// 	for(let i = 0; i<arr.length; i++){
-// 		arr.splice(i,1,arr[i]+1)
-// 		console.log(arr[i]);
-// 	}
-// }
-// function callArr(arr, callBack){
-// 	callBack(arr);
-// }
-// let arr1 = [1, 3, 45, 34, 22];
-// callArr(arr1,arrPlus);
+function helloElement(i){
+	return i = `hello ${i}`
+}
+function elementPlus(i){
+	return ++i;
+}
+function callArr(arr, callBack){
+	let result = [];
+	for(let i=0;i<arr.length;i++){	 
+		result.push(callBack(arr[i]))
+	}
+	console.log(result);
+	return result;
+}
+let arr1 = [1, 3, 45, 34, 22];
+callArr(arr1,helloElement);
 
 // 2. Создать функцию sumTo, которая принимает два числа и callback.
 // Задача функции складывать 2 числа, а задача callback’a заставлять
 // функцию sumTo возвращать результат в виде числа, строки или
 // логического типа данных.
 
-function string(n){
-	n = String(n);
-	console.log(n)
-	console.log(typeof(n))
-}
-function numb(n){
-	n = Number(n);
-	console.log(n)
-	console.log(typeof(n))
-}
-function bool(n){
-	n = Boolean(n);
-	console.log(n)
-	console.log(typeof(n))
-}
-function sumTo(a,b,convert){
-	let summ = a+b;
-	return convert(summ);
-}
-sumTo(5,7,bool)
+// function string(n){
+// 	n = String(n);
+// 	console.log(n)
+// 	console.log(typeof(n))
+// }
+// function numb(n){
+// 	n = Number(n);
+// 	console.log(n)
+// 	console.log(typeof(n))
+// }
+// function bool(n){
+// 	n = Boolean(n);
+// 	console.log(n)
+// 	console.log(typeof(n))
+// }
+// function sumTo(a,b,convert){
+// 	let summ = a+b;
+// 	return convert(summ);
+// }
+// sumTo(5,7,bool)
 
 // 3. Создать функцию checkLogin, которая принимает 4 параметра. 1
 // параметр - это логин, введенный пользователем, 2 –
@@ -214,30 +213,30 @@ sumTo(5,7,bool)
 // тогда, когда нажали «отмена», после чего выводится
 // среднее арифметическое.
 
-let sum = 0;
-let counter = 0;
-function toSum(n){
- sum += n;
-}
-function toCount(){
-	return counter++;
-}
-function arifm(a,b){
-	return a/b;
-}
-function arithmeticMean(){
-	while(true){
-		number = prompt(`number?`);
-		if(number===null){
-			break;
-		} else {
-		number = Number(number);
-		toSum(number);
-		toCount();
-		}
-	}
-	alert(arifm(sum,counter));
-}
-arithmeticMean();
-alert(sum);
-alert(counter);
+// let sum = 0;
+// let counter = 0;
+// function toSum(n){
+//  sum += n;
+// }
+// function toCount(){
+// 	return counter++;
+// }
+// function arifm(a,b){
+// 	return a/b;
+// }
+// function arithmeticMean(){
+// 	while(true){
+// 		number = prompt(`number?`);
+// 		if(number===null){
+// 			break;
+// 		} else {
+// 		number = Number(number);
+// 		toSum(number);
+// 		toCount();
+// 		}
+// 	}
+// 	alert(arifm(sum,counter));
+// }
+// arithmeticMean();
+// alert(sum);
+// alert(counter);
