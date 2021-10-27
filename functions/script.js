@@ -1,6 +1,7 @@
 // 1. Создать функцию, которая принимает массив и callback. Функция
 // должна каждый элемент массива обрабатывать callback’ом.
 
+<<<<<<< HEAD
 function helloArr(i){
  return `Hello + ${i}`;
 }
@@ -16,6 +17,24 @@ function callArr(arr, callBack){
 }
 let arr1 = [1, 3, 45, 34, 22];
 console.log(callArr(arr1,arrPlus));
+=======
+// function helloElement(i){
+// 	return i = `hello ${i}`
+// }
+// function elementPlus(i){
+// 	return ++i;
+// }
+// function callArr(arr, callBack){
+// 	let result = [];
+// 	for(let i=0;i<arr.length;i++){	 
+// 		result.push(callBack(arr[i]))
+// 	}
+// 	console.log(result);
+// 	return result;
+// }
+// let arr1 = [1, 3, 45, 34, 22];
+// callArr(arr1,helloElement);
+>>>>>>> 774fe4997e93d2e934c4e96e55189d86b7a73b26
 
 // 2. Создать функцию sumTo, которая принимает два числа и callback.
 // Задача функции складывать 2 числа, а задача callback’a заставлять
@@ -47,6 +66,7 @@ console.log(callArr(arr1,arrPlus));
 // параметр - это логин, введенный пользователем, 2 –
 // правильный логин, 3 – callback, который вызовется если логин
 // верный, 4 – callback, который вызовется если логин ложный.
+<<<<<<< HEAD
 // 	function trueCall(){
 // 		alert("Welcome!");
 // 	}
@@ -63,10 +83,29 @@ console.log(callArr(arr1,arrPlus));
 // let userName = prompt("What is your login?");
 // let name = "Troll";
 // checkLogin(userName, name,trueCall,falseCall);
+=======
+
+// function trueCall(){
+// 	return "Welcome!";
+// }
+// function falseCall(){
+// 	return "Go away!";
+// }
+
+// function checkLogin(userLogin,trueLogin,call1,call2){
+// 	if(userLogin===trueLogin){
+// 		alert(call1());
+// 	} else{
+// 		alert(call2());
+// 	}
+// }
+// let userName = prompt("What is your login?");
+// let login = "Troll";
+// checkLogin(userName, login,trueCall,falseCall);
+>>>>>>> 774fe4997e93d2e934c4e96e55189d86b7a73b26
 
 // 4. Написать программу, которая вычисляет сумму чисел от 1 до n. Значение n вводится с клавиатуры.
 // Проверить число n на корректность (чтобы это было число, чтобы оно не было меньше 1, чтобы это было не null).
-
 // function checkNumber(num){
 // 	if(typeof(num)!=="number"){
 // 		return alert("This is not a number");
@@ -79,20 +118,20 @@ console.log(callArr(arr1,arrPlus));
 // }
 // function checkNull(num){
 // 	if(num===null){
-// 		return alert("The end");
+// 		return alert("You refused to enter a number");
 // 	}
 // }
-// function sumTo(max){
-//     checkNumber(max);
-// 	checkLessThanOne(max);
-// 	checkNull(max);
+// function sumTo(number){
+//     checkNumber(number);
+// 	checkLessThanOne(number);
+// 	checkNull(number);
 // 	let sum = 0;
-// 	for(let i = 0;i<=max;i++){
+// 	for(let i = 0;i<=number;i++){
 // 		sum +=i;
 // 	}
 // 	return sum;
 // } 
-// alert(sumTo(656));
+// alert(sumTo(12));
 
 // 5. Написать программу, которая определяет количество
 // положительных, отрицательных чисел и нулей. В
@@ -139,6 +178,7 @@ console.log(callArr(arr1,arrPlus));
 // клавиатуры 10 пар чисел, сравнивает эти числа и
 // выводит большие из них. (Используйте массив)
 
+<<<<<<< HEAD
 // Задание 6 Вариант 1
 // let biggests = [];
 // function toPush(a,b,arr){
@@ -159,6 +199,8 @@ console.log(callArr(arr1,arrPlus));
 // console.log(compare());
 
 // Задание 6 Вариант 2
+=======
+>>>>>>> 774fe4997e93d2e934c4e96e55189d86b7a73b26
 // let numbers = [];
 // function selectBig(a,b,arr){
 // 	if(a>b){
@@ -182,7 +224,7 @@ console.log(callArr(arr1,arrPlus));
 // 	}
 // }
 // function compare(){
-// 	toInput(3,selectSmall)
+// 	toInput(10,selectSmall)
 // 	return numbers;
 // }
 // console.log(compare());
