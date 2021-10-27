@@ -31,22 +31,31 @@
 // switcher();
 ///////////////////////////////////
 
-function countMaker() {
-    let n = 0;
-    return function(a){
-        if(a){
-            return console.log(n +=a); 
-        }
-         return console.log(n++);
-    }
-}
+// function countMaker() {
+//     let n = 0;
+//     return function(a){
+//         if(a){
+//             return console.log(n +=a); 
+//         }
+//          return console.log(n++);
+//     }
+// }
 
-const count = countMaker();
-count();
-count();
-count();
-count();
-count();
-count(50);
-count();
-count();
+// const count = countMaker();
+// count();
+// count();
+// count();
+// count();
+// count();
+// count(50);
+// count();
+// count();
+// Задача на свойство arguments
+function foo(){
+    let sum = 0;
+    for(let i =0;i<arguments.length;i++){
+        sum += arguments[i];
+    }
+    return sum/arguments.length;
+}
+alert(foo(11,45,565,233));
