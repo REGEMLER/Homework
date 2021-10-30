@@ -38,15 +38,28 @@
 // console.log(newPeople);
 
 // 1.4 Объедините массивы people1 и people2 так, чтобы в получившемся массиве не было одинаковых имен.
-// let people1 = [`Samuel`, `Jack`, `Thomas`, `Henry`, `Leo`, `Connor`, `David`, `Ryan`];
-// let people2 = [`Connor`, `Stanley`, `Leo`, `Albert`, `Owen`, `Oliver`, `Thomas`];
-// let samePerson= [];
-// for(let i = 0;i<people2.length;i++){
-//     let j = people2[i];
-//     samePerson = people1.filter((item,index) => item[index]!==j);
-// }
-//     console.log(samePerson);
+let people1 = [`Samuel`, `Jack`, `Thomas`, `Henry`, `Leo`, `Connor`, `David`, `Ryan`];
+let people2 = [`Connor`, `Stanley`, `Leo`, `Albert`, `Owen`, `Oliver`, `Thomas`];
+let people3 = people2.concat();
+let newPeople = [];
+for(let i = 0;i<people2.length;i++){
+let j = people2[i];
+newPerson = people1.find((item) => item ===j);
+        if(newPerson!==undefined){
+            newPeople.push(newPerson);
+    } 
+}
+console.log(newPeople);
+for(let i = 0;i<people3.length;i++){
+    people1.push(people3[i]);
+    }
+console.log(people1);
+for(let i = 0; i<newPeople.length;i++){
+    let index = people1.indexOf(newPeople[i]);
+    people1.splice(index,1);
+}
 
+console.log(people1);
 // 1.5 Отсортируйте получившийся массив по алфавиту.
 // let people = [`Samuel`, `Jack`, `Thomas`, `Henry`, `Leo`, `Connor`, `David`, `Ryan`];
 // let abcPeople = people.sort();
