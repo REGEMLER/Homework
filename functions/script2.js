@@ -88,43 +88,43 @@
 // совершено, то просто вернуть строку с названием
 // класса. Функция должна возвращать текущее
 // название класса.
-function makerClassName(){
-	return function (name,toggler){
-		let newClass = prompt("WHat is the name of your class");
-		let klass;
-		if(toggler == true){
-		  klass = newClass;
-		} if(toggler == false){
-			klass = name;
-		}
-		return alert(klass); 
-	}
-}
-const classNameEditor = makerClassName();
-classNameEditor(`Hon`,true);
-classNameEditor(`gok`,false);
-classNameEditor(`deer`,true);
+// function makerClassName(){
+// 	return function (name,toggler){
+// 		let newClass = prompt("WHat is the name of your class");
+// 		let klass;
+// 		if(toggler == true){
+// 		  klass = newClass;
+// 		} if(toggler == false){
+// 			klass = name;
+// 		}
+// 		return alert(klass); 
+// 	}
+// }
+// const classNameEditor = makerClassName();
+// classNameEditor(`Hon`,true);
+// classNameEditor(`gok`,false);
+// classNameEditor(`deer`,true);
 
-Правильное решение 
-function classNameEditorMaker () {
-    let className = '';
-    return function (val, isAdding) {
-        if (val && isAdding) {
-            className += ' ' + val;
-        }
-        if (val && isAdding === false) {
-            const classNameArr = className.split(' ');
-            const indexToDelete = className.indexOf(val);
-            if(indexToDelete >= 0) {
-                classNameArr.splice(indexToDelete, 1);
-                className = classNameArr.join(' ');
-            }
-        }
-        return className.trim();
-    };
-}
-const classNameEd = classNameEditorMaker();
-console.log(classNameEd('test', true));
-console.log(classNameEd('smth', true));
-console.log(classNameEd('adasdsd', false));
-console.log(classNameEd('test', false));
+// Правильное решение 
+// function classNameEditorMaker () {
+//     let className = '';
+//     return function (val, isAdding) {
+//         if (val && isAdding) {
+//             className += ' ' + val;
+//         }
+//         if (val && isAdding === false) {
+//             const classNameArr = className.split(' ');
+//             const indexToDelete = className.indexOf(val);
+//             if(indexToDelete >= 0) {
+//                 classNameArr.splice(indexToDelete, 1);
+//                 className = classNameArr.join(' ');
+//             }
+//         }
+//         return className.trim();
+//     };
+// }
+// const classNameEd = classNameEditorMaker();
+// console.log(classNameEd('test', true));
+// console.log(classNameEd('smth', true));
+// console.log(classNameEd('adasdsd', false));
+// console.log(classNameEd('test', false));

@@ -37,29 +37,29 @@
 // console.log(newPeople);
 
 // 1.4 Объедините массивы people1 и people2 так, чтобы в получившемся массиве не было одинаковых имен.
-let people1 = [`Samuel`, `Jack`, `Thomas`, `Henry`, `Leo`, `Connor`, `David`, `Ryan`];
-let people2 = [`Connor`, `Stanley`, `Leo`, `Albert`, `Owen`, `Oliver`, `Thomas`];
-let newPeople = [];
-for(let i = 0;i<people2.length;i++){
-newPerson = people1.find((item) => item ===people2[i]);
-        if(newPerson!==undefined){
-            newPeople.push(newPerson);
-    } 
-}
-console.log(newPeople);
-for(let i = 0;i<people2.length;i++){
-    people1.push(people2[i]);
-    }
-console.log(people1);
-for(let i = 0; i<newPeople.length;i++){
-    let index = people1.indexOf(newPeople[i]);
-    people1.splice(index,1);
-}
-console.log(people1);
+// let people1 = [`Samuel`, `Jack`, `Thomas`, `Henry`, `Leo`, `Connor`, `David`, `Ryan`];
+// let people2 = [`Connor`, `Stanley`, `Leo`, `Albert`, `Owen`, `Oliver`, `Thomas`];
+// let newPeople = [];
+// for(let i = 0;i<people2.length;i++){
+// newPerson = people1.find((item) => item ===people2[i]);
+//         if(newPerson!==undefined){
+//             newPeople.push(newPerson);
+//     } 
+// }
+// console.log(newPeople);
+// for(let i = 0;i<people2.length;i++){
+//     people1.push(people2[i]);
+//     }
+// console.log(people1);
+// for(let i = 0; i<newPeople.length;i++){
+//     let index = people1.indexOf(newPeople[i]);
+//     people1.splice(index,1);
+// }
+// console.log(people1);
 
-// 1.5 Отсортируйте получившийся массив по алфавиту.
-let abcPeople = people1.sort();
-console.log(abcPeople);
+// // 1.5 Отсортируйте получившийся массив по алфавиту.
+// let abcPeople = people1.sort();
+// console.log(abcPeople);
 
 // 2. Дан случайный массив чисел. С помощью метода .filter()
 // отфильтруйте массив так, чтобы в новый массив вошли
@@ -85,6 +85,15 @@ console.log(abcPeople);
 // 4. Дан массив случайных чисел. С помощью метода
 // .reduce() просуммировать только четные числа из этого
 // массива.
+
+let arr = [12,65,90,44,234,11,1]
+const summ = arr.reduce((acc,item) => {
+    if(item%2===0){
+         acc += item;
+    }
+    return acc;
+},0);
+alert(summ);
 
 // 5. Пользователь вводит 10 случайных значений. Каждое
 // значение необходимо записать в массив. С помощью
