@@ -56,6 +56,28 @@
 // funcCounter(11);
 // funcCounter();
 // funcCounter();
+  
+// Правильное решение 
+// function counterMaker () {
+//     let counter = 0;
+//     let ascend = true;
+//     return (val) => {
+//         if (val && val === 0) {
+//             counter = val;
+//             ascend = !(val >= 100);
+//         }
+//         if (ascend) {
+//             return ++counter;
+//         } 
+//         return --counter;      
+//     };
+// }
+// const counter = counterMaker();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter(120));
+// console.log(counter());
 
 // 3. Создать функцию classNameEditor(), которая
 // принимает строку с названием класса и добавляет
@@ -82,3 +104,27 @@ const classNameEditor = makerClassName();
 classNameEditor(`Hon`,true);
 classNameEditor(`gok`,false);
 classNameEditor(`deer`,true);
+
+Правильное решение 
+function classNameEditorMaker () {
+    let className = '';
+    return function (val, isAdding) {
+        if (val && isAdding) {
+            className += ' ' + val;
+        }
+        if (val && isAdding === false) {
+            const classNameArr = className.split(' ');
+            const indexToDelete = className.indexOf(val);
+            if(indexToDelete >= 0) {
+                classNameArr.splice(indexToDelete, 1);
+                className = classNameArr.join(' ');
+            }
+        }
+        return className.trim();
+    };
+}
+const classNameEd = classNameEditorMaker();
+console.log(classNameEd('test', true));
+console.log(classNameEd('smth', true));
+console.log(classNameEd('adasdsd', false));
+console.log(classNameEd('test', false));
