@@ -16,46 +16,47 @@
 
 // 2. Создать функцию funcCounter(), которая способна
 // считать количество своих вызовов. Если передать в эту
-// функцию число меньше 100, то функция считает
+// функцию число меньше 10, то функция считает
 // количество вызовов от этого числа до бесконечности,
-// если передать число больше 100, то функция считает
+// если передать число больше 10, то функция считает
 // количество от этого числа до 0.
-// function makerFuncCounter(){
-// 	let counter = 0;
-// 	let toggler = true;
-// 	return function(i){
-// 	if(i && i<100){
-// 		counter = i;
-// 		toggler = true;
-// 		return console.log(++counter);
-// 	} if(i && i>100){
-// 			counter = i;
-// 			toggler = false; 
-// 			return console.log(--counter);
-// 	} if(counter===0 && toggler ===false){
-// 		toggler = true;
-// 	    } if(counter<=100 && toggler ===false){
-// 		return console.log(--counter);
-// 		} if(counter<=100 && toggler ===true){
-// 		return console.log(++counter);
-// 		} if(counter>=100 && toggler ===false){
-// 		return console.log(--counter);
-// 		} if(counter>=100 && toggler ===true){
-// 		return console.log(++counter);
-// 	} 
-// }
-// }
-// const funcCounter = makerFuncCounter();
-// funcCounter();
-// funcCounter();
-// funcCounter(99);
-// funcCounter();
-// funcCounter();
-// funcCounter(7);
-// funcCounter();
-// funcCounter(11);
-// funcCounter();
-// funcCounter();
+// Решение джуна
+function makerFuncCounter(){
+	let counter = 0;
+	let toggler = true;
+	return function(i){
+        if(i){
+            counter = i;
+            toggler = (i<=10);
+            return console.log(counter);
+        }
+        if(counter===0||toggler){
+            toggler = true;
+            return console.log(++counter);
+        } else{
+             return console.log(--counter);
+        }
+}
+}
+const funcCounter = makerFuncCounter();
+funcCounter();
+funcCounter();
+funcCounter(8);
+funcCounter();
+funcCounter();
+funcCounter(11);
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
+funcCounter();
   
 // Правильное решение 
 // function counterMaker () {
@@ -64,7 +65,8 @@
 //     return (val) => {
 //         if (val && val === 0) {
 //             counter = val;
-//             ascend = !(val >= 100);
+//             ascend = !(val >= 10);
+//             return counter;
 //         }
 //         if (ascend) {
 //             return ++counter;
@@ -75,8 +77,22 @@
 // const counter = counterMaker();
 // console.log(counter());
 // console.log(counter());
+// console.log(counter(9));
 // console.log(counter());
-// console.log(counter(120));
+// console.log(counter());
+// console.log(counter(11));
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 // console.log(counter());
 
 // 3. Создать функцию classNameEditor(), которая
