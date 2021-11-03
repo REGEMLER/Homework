@@ -51,16 +51,25 @@ const person = {
 setTimeout(person.run.bind(person), 2000)
 
 
-
+/////////////////////////////
 function eat () {
-
     const that = this;
-    
     function eatInner () {
         console.log(that);
     }
-
     eatInner();
 }
 
+eat.call(person);
+/////////////////////////////////
+function eat () {
+    function eatInner () {
+        console.log(this);
+    }
+    const eatInnerArrow = () => {
+        console.log(this);
+    }
+    eatInner();
+    eatInnerArrow();
+}
 eat.call(person);
