@@ -84,9 +84,7 @@ const arr = [
 	{a:95, b:7}
 ];
 const arr2 =arr.map(function(item){
-	item.a = item.a;
-	item.b = item.b*item.b;
-	return item = {a:item.a, b:item.b}
+	return item = {a:item.a, b:item.b**2}
 
 })
 console.log(arr);
