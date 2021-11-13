@@ -51,15 +51,16 @@ let book7 = new Book(`Дюма`, `Три мушкетера`, 600);
 let book8 = new Book(`Тарле`, `Наполеон`, 800);
 let arrBook = [book1,  book2,  book3,  book4,  book5,  book6,  book7,  book8];
 console.log(arrBook);
-
-// function getBiggerBook() {
-//     arrBook.sort((a,b) => {
-//       return  a.pageAmount - b.pageAmount;
-
-//     })
-
-// }
-// alert(getBiggerBook());
+function getBiggerBook() {
+    let max = arrBook[0].pageAmount;
+    for(let i = 0; i<arrBook.length; i++){
+        if(max<arrBook[i].pageAmount){
+         max = arrBook[i].pageAmount;
+        }
+    }
+    return max;
+}
+alert(getBiggerBook());
 
 // 4. Создать класс Timer, инстанс которого запускает таймер и выводит в консоль
 // прошедшее время в секундах (1 2 3 4 5 и тд)
