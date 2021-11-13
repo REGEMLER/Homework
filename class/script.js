@@ -49,17 +49,17 @@ let book5 = new Book(`Лондон`, `Мартин Иден`, 700);
 let book6 = new Book(`Толкиен`, `Властелин колец`, 1200);
 let book7 = new Book(`Дюма`, `Три мушкетера`, 600);
 let book8 = new Book(`Тарле`, `Наполеон`, 800);
-let arrBook = [ book1,  book2,  book3,  book4,  book5,  book6,  book7,  book8];
+let arrBook = [book1,  book2,  book3,  book4,  book5,  book6,  book7,  book8];
 console.log(arrBook);
 
-function getBiggerBook() {
-    arrBook.sort((a.pageAmount,b.pageAmount) => {
-      return  a.pageAmount - b.pageAmount;
+// function getBiggerBook() {
+//     arrBook.sort((a,b) => {
+//       return  a.pageAmount - b.pageAmount;
 
-    })
+//     })
 
-}
-alert(getBiggerBook());
+// }
+// alert(getBiggerBook());
 
 // 4. Создать класс Timer, инстанс которого запускает таймер и выводит в консоль
 // прошедшее время в секундах (1 2 3 4 5 и тд)
@@ -69,17 +69,21 @@ alert(getBiggerBook());
 // работают независимо друг от друга.
 // останавливайте таймер через некоторое время после запуска с помощью setTimeout()
 
-let dw = {};
-daniel = {fn: `Dan`};
-jason = {ky: `jason`};
-ju = {ajaj: `hol`}
-dw[daniel] =123;
-dw[jason] = 456;
-dw[ju] = 555
-console.log(dw[daniel]);
 
-function foo(a){
-    delete a;
-    return a;
-}
-console.log(foo(5))
+
+
+// Побочное 
+// let dw = {};
+// daniel = {fn: `Dan`};
+// jason = {ky: `jason`};
+// ju = {ajaj: `hol`}
+// dw[daniel] =123;
+// dw[jason] = 456;
+// dw[ju] = 555
+// console.log(dw[daniel]);
+
+// function foo(a){
+//     delete a;
+//     return a;
+// }
+// console.log(foo(5))
