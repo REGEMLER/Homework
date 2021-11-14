@@ -73,3 +73,10 @@ console.log(Dev1);
 //  Длину линий можно найти по теореме Пифагора
 //  Три линии могут сформировать треугольник если длина каждой стороны 
 //  меньше суммы дву других сторон.
+
+function RRR(name, ahe){
+    this.name = name;
+    this.ahe = ahe;
+}
+let aaa  = new RRR(`hhhh`, 56);
+console.log(aaa.__proto__ === RRR.prototype)
