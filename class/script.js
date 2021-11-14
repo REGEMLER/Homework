@@ -85,7 +85,9 @@ let book7 = new Book(`Дюма`, `Три мушкетера`, 600);
 let book8 = new Book(`Тарле`, `Наполеон`, 800);
 let arrBook = [book1,  book2,  book3,  book4,  book5,  book6,  book7,  book8];
 console.log(arrBook);
-function getBiggerBook() {
+
+// Решение через цикл
+function getBiggerBookLoop() {
     let obj =arrBook[0];
     let max = arrBook[0].pageAmount;
     for(let i = 0; i<arrBook.length; i++){
@@ -96,7 +98,17 @@ function getBiggerBook() {
     }
     return obj;
 }
-console.log(getBiggerBook());
+
+//Решение через метод массива reduce 
+function getBiggerBookReduce(arr){
+    let maxBook = arr.reduce((acc,item) => {
+        if(item.pageAmount>acc.pageAmount){
+            acc = item;
+        } return acc;
+    });
+    return maxBook;
+}
+console.log(getBiggerBookReduce(arrBook));
 
 // 4. Создать класс Timer, инстанс которого запускает таймер и выводит в консоль
 // прошедшее время в секундах (1 2 3 4 5 и тд)
