@@ -49,38 +49,38 @@
 
 // es5
 
-function Animal (name, age) {
-    this.name = name;
-    this.age = age;
-}
+// function Animal (name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
 
-Animal.rename = function (animal) {
-    animal.name = 'blabla';
-};
+// Animal.rename = function (animal) {
+//     animal.name = 'blabla';
+// };
 
-Animal.prototype.eat = function (food) {
-    return `${this.name} eats ${food}`;
-};
+// Animal.prototype.eat = function (food) {
+//     return `${this.name} eats ${food}`;
+// };
 
-Animal.prototype.sleep = function () {
-    return `${this.name} sleeps`;
-};
+// Animal.prototype.sleep = function () {
+//     return `${this.name} sleeps`;
+// };
 
 // const dog = new Animal('bobik', 23);
 // // console.log(dog);
 
-function Human (name, age, job) {
-    // this = {};
-    Animal.call(this, name, age);
-    this.job = job;
-}
+// function Human (name, age, job) {
+//     // this = {};
+//     Animal.call(this, name, age);
+//     this.job = job;
+// }
 
-Human.prototype = Object.create(Animal.prototype); 
-Human.prototype.constructor = Human;
+// Human.prototype = Object.create(Animal.prototype); 
+// Human.prototype.constructor = Human;
 
-Human.prototype.learn = function () {
-    return `${this.name} learns JS`;
-};
+// Human.prototype.learn = function () {
+//     return `${this.name} learns JS`;
+// };
 
 // const h1 = new Human('John', 23, 'bus driver');
 
@@ -89,51 +89,51 @@ Human.prototype.learn = function () {
 // и поле isProgrammer = true
 // отнаследовать Programmer от Human
 
-function Programmer(){
-    Human.apply(this, arguments);
-    this.isProgrammer = true;
-}
-Programmer.prototype = Object.create(Human.prototype); 
-Programmer.prototype.constructor = Programmer;
-Programmer.prototype.code = function () {
-    return `${this.name} is codding`;
- };
+// function Programmer(){
+//     Human.apply(this, arguments);
+//     this.isProgrammer = true;
+// }
+// Programmer.prototype = Object.create(Human.prototype); 
+// Programmer.prototype.constructor = Programmer;
+// Programmer.prototype.code = function () {
+//     return `${this.name} is codding`;
+//  };
 
 // es6
 
 
 
- class Animal {
-    constructor (name,age) {
-        this.name = name;
-        this.age = age;
-    }
+//  class Animal {
+//     constructor (name,age) {
+//         this.name = name;
+//         this.age = age;
+//     }
 
-    eat () {
-        return `${this.name} eats`;
-    }
-}
+//     eat () {
+//         return `${this.name} eats`;
+//     }
+// }
 
 // const dog = new Animal('Tuzik',10);
 
-class Human extends Animal {
-    constructor (job, ...args) { // [name, age]
-        super(...args);
-        this.job = job;
+// class Human extends Animal {
+//     constructor (job, ...args) { // [name, age]
+//         super(...args);
+//         this.job = job;
         
-    }
+//     }
 
-    learn (technology){
-        console.log(super.eat());
-        return `${this.name} learns ${technology}`;
-    }
+//     learn (technology){
+//         console.log(super.eat());
+//         return `${this.name} learns ${technology}`;
+//     }
 
-    eat () {
-        const eatAsAnimal = super.eat();
-        return eatAsAnimal + ' with a fork';
-    }
-}
+//     eat () {
+//         const eatAsAnimal = super.eat();
+//         return eatAsAnimal + ' with a fork';
+//     }
+// }
 
-const h1 = new Human('bus-driver', 'David', 23);
+// const h1 = new Human('bus-driver', 'David', 23);
 
-console.log(h1.eat());
+// console.log(h1.eat());
