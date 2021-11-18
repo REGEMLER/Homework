@@ -30,15 +30,6 @@ class House{
         this.maxApartments = maxApartments;
     }
     addApartment(apart){
-        let pravda = true;
-        for(let i = 0; i<this.apartments.length;i++){
-            if(pravda === false){
-                break; 
-            if(apart.number === this.apartments[i].apartmentNumber){
-                pravda = false;
-    } 
-    }
-}
         if(this.apartments.length<this.maxApartments && apart.owner !== `` && pravda !== false){
             this.apartments.push(apart);
         } 
