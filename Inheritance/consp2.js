@@ -13,7 +13,6 @@
 // apartmentNumber: number
 // owner: string // по умолчанию - пустая строка
 // и метод setOwner('Vasya')
-
 // [
 //     {apartmentNumber:2, owner:'Vasya'},
 //     {apartmentNumber:3, owner:'Petya'}
@@ -30,12 +29,13 @@ class House{
         this.maxApartments = maxApartments;
     }
     addApartment(apart){
-        if(this.apartments.length<this.maxApartments && apart.owner !== `` && pravda !== false){
+        if(this.apartments.length<this.maxApartments 
+            && apart.owner !== `` 
+            && !this.apartments.some(({apartmentNumber}) => apartmentNumber === apart.apartmentNumber )){
             this.apartments.push(apart);
         } 
     }
 }
-
 
 
 class Apartment{
@@ -72,3 +72,32 @@ house1.addApartment(apartment5);
 house1.addApartment(apartment6);
 
 console.log(house1);
+
+// 2. Создать класс Device, который имеет параметр isOn (по 
+//     умолчанию false), метод callSmbd, который принимает имя 
+//     вызываемого абонента и метод switchDevice, который 
+//     переключает параметр isOn. Позвонить абоненту можно 
+//     только тогда, когда параметр isOn == true, иначе вывести 
+//     сообщение, что звонок невозможен. Необходимо также 
+//     создать классы Smartphone(принимает имя и диагональ 
+//     экрана(не может быть больше 8)) и Tablet(принимает имя и 
+//     диагональ экрана (не может быть меньше 8)), которые 
+//     наследуют от класса Device
+
+// 3. Создать класс Battery, который инициализирует поля type,
+// energy (заряд, по умолчанию 100). Создать класс Device, 
+// который принимает параметр batteryType и метод
+// insertBattery, который принимает два параметра (две 
+// батарейки). Создать класс Gamepad, который наследует от 
+// Device. Класс Gamepad должен содержать поле model, поле 
+// isConnected (boolean) и методы connectTo(), который 
+// принимает название другого девайса и выводит сообщение 
+// типа “gamepadModel connected to TV”, метод disconnect(), 
+// который отключает Gamepad и метод play(), который 
+// отнимает 10 зарядов от каждой батареи. Если хотя бы одно 
+// поле batteryType у Device и type у Battery не совпадают, то 
+// вывести сообщение что батарейки не вставлены. 
+// Подключить один девайс к другому можно только если есть 
+// 2 батарейки. Подключить Gamepad можно только если 
+// isConnected == false. Если заряд батареек == 0, то метод 
+// play вернет сообщение с требованием замены батареек
