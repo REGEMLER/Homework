@@ -86,50 +86,50 @@ house1.addApartment(apartment6);
 //     диагональ экрана (не может быть меньше 8)), которые 
 //     наследуют от класса Device
 
-class Device{
-    constructor(){
-        this.isON = false
-    }
-    callSmbd(name,switchDevice){
-        if(switchDevice){
-         this.isON = !this.isON;
-        }
-        if(this.isON === true){
-            console.log(`${name} is calling`)
-        } else{
-            console.log(`The number you have called is not available.`)
-        }
-    }
-}
+// class Device{
+//     constructor(){
+//         this.isON = false
+//     }
+//     callSmbd(name,switchDevice){
+//         if(switchDevice){
+//          this.isON = !this.isON;
+//         }
+//         if(this.isON === true){
+//             console.log(`${name} is calling`)
+//         } else{
+//             console.log(`The number you have called is not available.`)
+//         }
+//     }
+// }
 
-let divice = new  Device();
-divice.callSmbd(`Petya`);
-divice.callSmbd(`Vasia`, 45);
+// let divice = new  Device();
+// divice.callSmbd(`Petya`);
+// divice.callSmbd(`Vasia`, 45);
 
-class Smartphone extends Device{
-    constructor(name,diagonal,...args){
-        super(...args);
-        this.name = name;
-        if(diagonal<=8){
-            this.diagonal = diagonal;
-        }
-    }
-}
+// class Smartphone extends Device{
+//     constructor(name,diagonal,...args){
+//         super(...args);
+//         this.name = name;
+//         if(diagonal<=8){
+//             this.diagonal = diagonal;
+//         }
+//     }
+// }
 
-class Tablet extends Device{
-    constructor(name,diagonal,...args){
-        super(...args);
-        this.name = name;
-        if(diagonal>=8){
-            this.diagonal = diagonal;
-        }
-    }
-}
+// class Tablet extends Device{
+//     constructor(name,diagonal,...args){
+//         super(...args);
+//         this.name = name;
+//         if(diagonal>=8){
+//             this.diagonal = diagonal;
+//         }
+//     }
+// }
 
-let smart = new  Smartphone(`X5`, 5);
-console.log(smart);
-let tablet = new  Tablet(`P34`, 9);
-console.log(tablet);
+// let smart = new  Smartphone(`X5`, 5);
+// console.log(smart);
+// let tablet = new  Tablet(`P34`, 9);
+// console.log(tablet);
 
 
 
@@ -155,3 +155,78 @@ console.log(tablet);
 // 2 батарейки. Подключить Gamepad можно только если 
 // isConnected == false. Если заряд батареек == 0, то метод 
 // play вернет сообщение с требованием замены батареек
+
+class Battery{
+    constructor(type){
+        this.energy = 100; 
+        this.type  = type;
+    }
+}
+
+const b1 = new Battery(`XXL`);
+const b2 = new Battery(`XL`);
+const b3 = new Battery(`XL`);
+
+class Device{
+    constructor(batteryType){
+        this.batteryType =batteryType;
+        this.bat1 = ``;
+        this.bat2 = ``; 
+    }
+    insertBattery(battery1,battery2){
+        this.bat1 = battery1;
+        this.bat2 = battery2;
+    }
+}
+
+class Gamepad extends Device{
+    constructor(model,...args){
+        super(...args);
+        this.model = model;
+        this.isConnected = false; 
+    }
+    connectTo(name){
+        if(this.isConnected === false
+            && this.bat1 !== undefined
+            && this.bat2 !== undefined ){
+                this.isConnected = true;
+                console.log(`${this.model} connected to ${name}`);
+            } else {
+                console.log(`Невозможно подключить`);
+            }
+    }
+    disconnect(){
+        this.isConnected = false; 
+    }
+    play(){
+        if(this.batteryType!==this.bat1.type
+            || this.batteryType!==this.bat2.type){
+          return console.log(`Батарейки не вставлены`)
+        }
+        if(this.bat1.energy===0
+            && this.bat2.energy===0){
+            return console.log(`Замените батарейки`)
+        }
+        this.bat1.energy =this.bat1.energy - 10; 
+        this.bat2.energy =this.bat2.energy - 10;
+    }
+}
+
+const gamepad = new Gamepad(`Ultra`, `XL`);
+gamepad.insertBattery(b2,b3);
+// gamepad.insertBattery(b1,b3); // батарейки не вставлены
+gamepad.connectTo(`tv`);
+gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play();
+// gamepad.play(); // На 11 раз "замените батарейки"
+gamepad.play();
+// gamepad.connectTo(`rgrtgrtgr`); //невозможно подключить 
+
+console.log(gamepad);
