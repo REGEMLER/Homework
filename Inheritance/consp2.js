@@ -18,6 +18,7 @@
 //     {apartmentNumber:3, owner:'Petya'}
 // ]
 
+// Создаем конструктор для House 
 class House{
     constructor(city,street,number,maxApartments){
         this.adress = {
@@ -25,19 +26,24 @@ class House{
             street: street,
             number:number
         }
+        // Создаем пустой массив куда будем добавлять квартиры 
         this.apartments = [];
         this.maxApartments = maxApartments;
     }
     addApartment(apart){
-        if(this.apartments.length<this.maxApartments 
+        if( 
+            // Проверка на максимальное колчичество квартир  
+            this.apartments.length<this.maxApartments 
+            // Проверка на налчичие владельца  
             && apart.owner !== `` 
+            // Проверка на несовпадение номеров квартир   
             && !this.apartments.some(({apartmentNumber}) => apartmentNumber === apart.apartmentNumber )){
             this.apartments.push(apart);
         } 
     }
 }
 
-
+// Создаем конструктор для кваритры
 class Apartment{
     constructor(number,owner = ``){
         this.apartmentNumber =  number;
@@ -62,16 +68,12 @@ let apartment6 = new  Apartment(56);
 
 let house1 = new House(`Ulan-Ude`, `Lenina`, 1, 13);
 house1.addApartment(apartment1);
-
 house1.addApartment(apartment2);
-
 house1.addApartment(apartment3);
-
 house1.addApartment(apartment4);
 house1.addApartment(apartment5);
 house1.addApartment(apartment6);
-
-console.log(house1);
+// console.log(house1);
 
 // 2. Создать класс Device, который имеет параметр isOn (по 
 //     умолчанию false), метод callSmbd, который принимает имя 
@@ -83,6 +85,58 @@ console.log(house1);
 //     экрана(не может быть больше 8)) и Tablet(принимает имя и 
 //     диагональ экрана (не может быть меньше 8)), которые 
 //     наследуют от класса Device
+
+class Device{
+    constructor(){
+        this.isON = false
+    }
+    callSmbd(name,switchDevice){
+        if(switchDevice){
+         this.isON = !this.isON;
+        }
+        if(this.isON === true){
+            console.log(`${name} is calling`)
+        } else{
+            console.log(`The number you have called is not available.`)
+        }
+    }
+}
+
+let divice = new  Device();
+divice.callSmbd(`Petya`);
+divice.callSmbd(`Vasia`, 45);
+
+class Smartphone extends Device{
+    constructor(name,diagonal,...args){
+        super(...args);
+        this.name = name;
+        if(diagonal<=8){
+            this.diagonal = diagonal;
+        }
+    }
+}
+
+class Tablet extends Device{
+    constructor(name,diagonal,...args){
+        super(...args);
+        this.name = name;
+        if(diagonal>=8){
+            this.diagonal = diagonal;
+        }
+    }
+}
+
+let smart = new  Smartphone(`X5`, 5);
+console.log(smart);
+let tablet = new  Tablet(`P34`, 9);
+console.log(tablet);
+
+
+
+
+
+
+
 
 // 3. Создать класс Battery, который инициализирует поля type,
 // energy (заряд, по умолчанию 100). Создать класс Device, 
