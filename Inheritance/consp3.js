@@ -67,3 +67,29 @@ footbalPlayer1.run(33);
 const hocheyPlayer1 = new HockeyPlayer(90, 2, `Ben`, 33);
 console.log(hocheyPlayer1);
 hocheyPlayer1.pushOpponentName(`Boris`)
+
+
+
+class Human {
+    constructor () {
+        this._age = 0;
+    }
+
+    set age (number) {
+        if (number < 120 && number > 0) {
+            this._age = number;
+        }
+    }
+
+    get age () {
+        return (this._age).toFixed(2) + '$';
+    }
+
+}
+
+const h1 = new Human();
+
+h1.age = 20;
+
+console.log( h1.age );
+
