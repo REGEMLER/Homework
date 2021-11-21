@@ -216,11 +216,11 @@ gamepad.insertBattery(b2,b3);
 // gamepad.insertBattery(b1,b3); // батарейки не вставлены
 gamepad.connectTo(`tv`);
 gamepad.play();
-// gamepad.play();
-// gamepad.play();
-// gamepad.play();
-// gamepad.play();
-// gamepad.play();
+gamepad.play();
+gamepad.play();
+gamepad.play();
+gamepad.play();
+gamepad.play();
 // gamepad.play();
 // gamepad.play();
 // gamepad.play();
@@ -229,3 +229,166 @@ gamepad.play();
 // gamepad.connectTo(`rgrtgrtgr`); //невозможно подключить 
 
 console.log(gamepad);
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+// 2. Создать класс Device, который имеет параметр isOn (по 
+//     умолчанию false), метод callSmbd, который принимает имя 
+//     вызываемого абонента и метод switchDevice, который 
+//     переключает параметр isOn. Позвонить абоненту можно 
+//     только тогда, когда параметр isOn == true, иначе вывести 
+//     сообщение, что звонок невозможен. Необходимо также 
+//     создать классы Smartphone(принимает имя и диагональ 
+//     экрана(не может быть больше 8)) и Tablet(принимает имя и 
+//     диагональ экрана (не может быть меньше 8)), которые 
+//     наследуют от класса Device
+
+// class Device {
+//     constructor () {
+//         this.isOn = false;
+//     }
+
+//     callSmbd (who) {
+//         if (this.isOn) {
+//             console.log(`you are calling ${who}`);
+//         } else {
+//             console.log(`You cant call anyone`);
+//         }
+//     }
+
+//     switchDevice () {
+//         this.isOn = !this.isOn;
+//     }
+// }
+
+// class Smartphone extends Device {
+//     constructor (name, diag) {
+//         super();
+//         this.name = name;
+//         if (diag > 8) {
+//             this.diag = 8;
+//         } else {
+//             this.diag = diag;
+//         }
+//     }
+// }
+
+// class Samsung extends Smartphone {
+//     constructor (name, diag) {
+//         super(name, diag);
+//     }
+// }
+
+// const dev = new Device();
+// dev.switchDevice();
+// dev.callSmbd('Oleg');
+
+
+// 3. Создать класс Battery, который инициализирует поля type,
+// energy (заряд, по умолчанию 100). Создать класс Device, 
+// который принимает параметр batteryType и метод
+// insertBattery, который принимает два параметра (две 
+// батарейки). Создать класс Gamepad, который наследует от 
+// Device. Класс Gamepad должен содержать поле model, поле 
+// isConnected (boolean) и методы connectTo(), который 
+// принимает название другого девайса и выводит сообщение 
+// типа “gamepadModel connected to TV”, метод disconnect(), 
+// который отключает Gamepad и метод play(), который 
+// отнимает 10 зарядов от каждой батареи. Если хотя бы одно 
+// поле batteryType у Device и type у Battery не совпадают, то 
+// вывести сообщение что батарейки не вставлены. 
+// Подключить один девайс к другому можно только если есть 
+// 2 батарейки. Подключить Gamepad можно только если 
+// isConnected == false. Если заряд батареек == 0, то метод 
+// play вернет сообщение с требованием замены батареек
+
+class Battery {
+    constructor (type) {
+        this.type = type;
+        this.energy = 100;
+    }
+}
+
+class Device {
+    constructor (type) {
+        this.batteryType = type;
+        this.btrs = [];
+    }
+
+    insertBattery (b1,b2) {
+        if (b1.type !== this.batteryType
+            || b2.type !== this.batteryType) {
+                console.error(`you cant insert type because batteries have different types: ${b1.type} and ${b2.type}`);
+        } else {
+            this.btrs.push(b1,b2);
+        }
+    }
+}
+
+class Gamepad extends Device {
+    constructor (model, type) {
+        super(type);
+        this.model = model;
+        this.isConnected = false;
+    }
+
+    connectTo (deviceName) {
+        if (!this.isConnected       
+            && this.isAllBatteriesCharged()) {
+                this.isConnected = true;
+                console.log('connected! to ' + deviceName);
+        } else {
+            console.log('could not connect!');
+        }
+    }
+    
+    disconnect () {
+        this.isConnected = false;
+        console.log('Device disconnected!');
+    }
+
+    play () {
+        if (this.btrs.length > 1 
+            && this.isAllBatteriesCharged() ) {
+            console.log('you play game!');
+            this.btrs = this.btrs.map((btr) => ({
+                ...btr,
+                energy: btr.energy <= 0 ? 0 : btr.energy - 10
+            }))
+        } else {
+            console.error('you cant play due to batteries, change them!');
+        }
+    }
+
+    isAllBatteriesCharged () {
+        return this.btrs.every(({energy}) => energy > 0 );
+    }
+}
+
+const b1 = new Battery ('AAA');
+const b2 = new Battery ('AAA');
+const b3 = new Battery ('BBB');
+
+const ps5gamepad = new Gamepad('ps5', 'AAA');
+
+ps5gamepad.insertBattery(b1,b2);
+ps5gamepad.connectTo('ps5');
+ps5gamepad.disconnect();
+ps5gamepad.connectTo('xbox');
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
+ps5gamepad.play();
