@@ -93,3 +93,42 @@ h1.age = 20;
 
 console.log( h1.age );
 
+
+class Human {
+    #age = 0;
+    static #planet = 'Earth';
+    test = 0;
+    static isHuman (human) {
+        return human instanceof Human;
+    }
+
+    whereILive () {
+        console.log(Human.#planet);
+    }
+
+    set age (number) {
+        if (number < 120 && number > 0) {
+            this.#age = number;
+        }
+    }
+
+    get age () {
+        return (this.#age).toFixed(2) + '$';
+    }
+}
+
+Human.someMethod = () => {
+    console.log(2323);
+};
+
+const h1 = new Human();
+const h2 = new Human();
+
+console.log( Human.someMethod({age: 23}) );
+
+
+
+
+
+
+
