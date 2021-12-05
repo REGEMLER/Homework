@@ -60,10 +60,10 @@ class ShopItem{
     get price(){
         return this._price + `$`;
     }
-    set amountamountamount(price){
+    set amount(price){
         this._amount = amount<0 ? this._amount : amount;
     }
-    get price(){
+    get amount(){
         return this._amount + `units`;
     }
 }   
