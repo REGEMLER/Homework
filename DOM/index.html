@@ -1,12 +1,82 @@
 <!DOCTYPE html>
+<!-- asdaswdasd -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
+    <title>Document</title>
 </head>
 <body>
+    <h1>Header</h1>
+
+    <ul id="menu">
+        <li class='item'>one</li>
+        <li class='item'>two</li>
+        <li class='item'>three</li>
+    </ul>
+
+    <ol id="shop">
+        <li class="second-item">item1</li>
+        <li class="second-item">item2</li>
+        <li class="second-item">item3</li>
+        <li class="second-item">item4</li>
+    </ol>
+
+    <table>
+        <thead>
+            
+                <td>h1</td>
+                <td>h2</td>
+                <td>h3</td>
+                <td>h4</td>
+           
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <ul>
+                        <li>one</li>
+                        <li>two</li>
+                        <li>
+                            <a href="#" id='main_link' >inner link</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <a href="#" id="secondary_link" >link</a>
+                </td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    Z:\FRONT12\Javascript\PREPOD\DOM\index.html
+    <!-- 
+        1. от main_link добраться до secondary_link
+        2. от secondary_link добраться до td с h2
+        3. от td с h2 добраться до main_link
+     -->
+
+
     <script src="script.js"></script>
 </body>
 </html>
