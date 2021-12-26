@@ -51,3 +51,12 @@ const items = [...shop.getElementsByTagName('li')];
 items.forEach((item, index)=>{
     item.addEventListener('click', valerchikFunc);
 })
+
+
+
+const a = document.getElementById('link');
+
+window.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+    alert('HREN');
+ }); //Запрет вызова браузерного меню 
