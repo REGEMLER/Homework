@@ -1,0 +1,14 @@
+#mapwrapper{
+    text-align: center;
+    width: 800px;
+    height: 559px;
+}
+#hint{
+    font-style: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "segoe ui", sans-serif;
+}
+#map{
+    width: 100%;
+}
