@@ -7,3 +7,7 @@ const treasure = {
 }
 
 console.log(treasure);
+
+treasure.addEventListener('click', function () {
+    alert(`Treasure is here`);
+}); 
