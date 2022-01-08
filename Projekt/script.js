@@ -8,6 +8,19 @@ const treasure = {
 
 console.log(treasure);
 
-treasure.addEventListener('click', function () {
-    alert(`Treasure is here`);
-}); 
+function attempt (event){
+    let gold = Math.sqrt((treasure.x - event.offsetX)**2 + (treasure.y - event.offsetY)**2);
+    if(gold<50){
+        hint.textContent = `Вы нашли золото!`;
+    }
+     else if(gold<100){
+        hint.textContent = `Золото где-то рядом!`;
+     }
+     else if(gold<200){
+        hint.textContent = `Тепло!`;
+     } else {
+        hint.textContent = `Холодно!`;
+     }
+}
+
+map.addEventListener(`click`, attempt);
