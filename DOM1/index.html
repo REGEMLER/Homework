@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .user-input {
+            padding: 5px;
+            outline: none;
+            font-size: 30px;
+            display: block;
+            width: 300px;
+            margin: 0 auto 20px;
+        }
+
+        .add, .todo {
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            margin: 0 auto;
+            display: block;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            cursor: pointer;
+            width: 100px;
+            font-weight: 900;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .todo {
+            background-color: lightsalmon;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #3c3c3c;
+            min-width: 200px;
+            width: auto;
+        }
+
+        .done {
+            background-color: lightseagreen;    
+        }
+
+        .add:hover {
+            background-color: lightgray;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .add:active {
+            box-shadow: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" class="user-input">
+        <button class="add">Add</button>
+        <div class="todo-list">
+            <div class="todo done">adasd</div>
+        </div>
+       
+    </div>
+</body>
+</html>
